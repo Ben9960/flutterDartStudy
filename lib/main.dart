@@ -1,58 +1,49 @@
-class Player {
-  final String name;
-  int xp;
-  String team;
-  int age;
+class Strong {
+  final double strengthLevel = 15000;
+}
 
-  void sayHello(){
-    print("Hi my name is $name");
+class QuickRunner{
+  void runQuick(){
+    print('ruuuuuun');
   }
+}
 
-  Player({required this.name, required this.xp, required this.team, required this.age});
+class Tall {
+  final double height = 1.99;
+}
 
-  Player.createBluePlayer({required String name, required int age, }) :
-        this.age = age,
-        this.name = name,
-        this.team = 'blue',
-        this.xp = 0;
+abstract class Human {
+  final String name;
+  Human({required this.name});
+  void sayHello(){
+    print("HI my name is $name");
+  }
+}
 
-  Player.createRedPlayer(String name, int age) :
-        this.age = age,
-        this.name = name,
-        this.team = 'red',
-        this.xp = 0;
+class Player extends Human with Strong, QuickRunner, Tall {
+  final Team team;
 
+  Player({
+    required this.team,
+    required String name
+}) : super(name: name);
 
-  Player.fromJson(Map<String, dynamic> playerJson)
-  : name = playerJson["name"],
-   xp = playerJson["xp"],
-  age = playerJson["age"],
-  team = playerJson["team"];
+  @override
+  void sayHello(){
+    super.sayHello();
+    print("and I p;ay for ${team}");
+  }
 
 }
 
+class Horse with Strong, QuickRunner{}
+
+class kid with QuickRunner{}
+
+enum Team { red, blue }
+enum XPLevel { beginner,medium, pro}
 
 void main(){
+  var player = Player(team: Team.red, name: 'blue');
 
-  var player = Player.createBluePlayer(
-      name : "nico",
-      age: 20,
-  );
-
-  var player3 = Player.fromJson({
-    "name" : "Kevin",
-  "xp": 30,
-  "age" : 21,
-  "team" : "blue",
-
-  });
-
-
-  player.sayHello();
-
-  var player2 =  Player.createRedPlayer("beomjin", 21 );
-
-  player2.sayHello();
-
-  player3.sayHello();
 }
