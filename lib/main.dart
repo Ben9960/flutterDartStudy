@@ -1,4 +1,5 @@
 class Strong {
+
   final double strengthLevel = 15000;
 }
 
