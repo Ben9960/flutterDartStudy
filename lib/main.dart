@@ -8,12 +8,14 @@ class Player {
 }
 
 void main(){
-  var nico = Player(name: 'potato');
+
+  var nico = Player(name: 'fgpotato');
 
   runApp( App() );
 
 
 }
+
 class App extends StatelessWidget {
 
   @override
