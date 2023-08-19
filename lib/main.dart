@@ -9,7 +9,7 @@ class Player {
 
 void main(){
 
-  var nico = Player(name: 'fgpotato');
+  var nico = Player(name: 'potato');
 
   runApp( App() );
 
