@@ -7,6 +7,7 @@ class Player {
   Player({required this.name});
 }
 
+
 void main(){
 
   var nico = Player(name: 'potato');
