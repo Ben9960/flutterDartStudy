@@ -22,6 +22,7 @@ class App extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return MaterialApp(
+
       home: Scaffold(
         appBar: AppBar( //named parametes로 이해
           title: Text('Hello flutter!'),
