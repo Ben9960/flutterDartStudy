@@ -24,6 +24,7 @@ class App extends StatelessWidget {
     return MaterialApp(
 
       home: Scaffold(
+
         appBar: AppBar( //named parametes로 이해
           title: Text('Hello flutter!'),
           backgroundColor: Colors.brown,
